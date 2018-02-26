@@ -24,6 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         nav.viewControllers = [main]
         nav.isNavigationBarHidden = true
         window?.makeKeyAndVisible()
+        
+        
+//        if FirebaseApp.auth().currentUser != nil {
+//            presentHome()
+//        } else {
+//            //User Not logged in
+//        }
+        
+        if Auth.auth().currentUser != nil {
+            let vc = LandingPage(nibName: "LandingPage", bundle: nil)
+            nav.pushViewController(vc, animated: true)
+        }
         return true
     }
 
