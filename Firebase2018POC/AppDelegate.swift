@@ -11,10 +11,7 @@ import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -24,17 +21,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         nav.viewControllers = [main]
         nav.isNavigationBarHidden = true
         window?.makeKeyAndVisible()
-        
-        
-//        if FirebaseApp.auth().currentUser != nil {
-//            presentHome()
-//        } else {
-//            //User Not logged in
-//        }
-        
+
+        let db = Firestore.firestore()
+
         if Auth.auth().currentUser != nil {
-            let vc = LandingPage(nibName: "LandingPage", bundle: nil)
-            nav.pushViewController(vc, animated: true)
+            if let user = Auth.auth().currentUser {
+                UserDefaults.standard.set(user.uid, forKey: "userId")
+                UserDefaults.standard.set(user.email, forKey: "userEmail")
+                db.collection("users").whereField("email", isEqualTo: user.email!).getDocuments{(snapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        for document in snapshot!.documents {
+                            if (document.data()["displayName"] as? String) != nil {
+                                let vc = addFriendsViewController(nibName: "addFriendsViewController", bundle: nil)
+                                nav.pushViewController(vc, animated: true)
+                            }else{
+                                UserDefaults.standard.set(user.uid, forKey: "userId")
+                                UserDefaults.standard.set(user.email, forKey: "userEmail")
+                                let vc = LandingPage(nibName: "LandingPage", bundle: nil)
+                                nav.pushViewController(vc, animated: true)
+                            }
+                        }
+                    }
+                }
+            }
+         
         }
         return true
     }

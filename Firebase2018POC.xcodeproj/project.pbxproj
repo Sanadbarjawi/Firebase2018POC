@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16700BBD20483FAC00378710 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16700BBB20483FAB00378710 /* FriendCell.swift */; };
+		16700BBE20483FAC00378710 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16700BBC20483FAB00378710 /* FriendCell.xib */; };
+		16A3D40E2045E77000742433 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D40D2045E77000742433 /* Bridge.swift */; };
+		16A3D4112045F1EE00742433 /* addFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D40F2045F1EE00742433 /* addFriendsViewController.swift */; };
+		16A3D4122045F1EE00742433 /* addFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16A3D4102045F1EE00742433 /* addFriendsViewController.xib */; };
+		16A3D4152045F20700742433 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D4132045F20700742433 /* FriendsViewController.swift */; };
+		16A3D4162045F20700742433 /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16A3D4142045F20700742433 /* FriendsViewController.xib */; };
+		16A3D4192045F21A00742433 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3D4172045F21A00742433 /* ChatRoomViewController.swift */; };
+		16A3D41A2045F21A00742433 /* ChatRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16A3D4182045F21A00742433 /* ChatRoomViewController.xib */; };
 		16EE6C9D204407EA00EBB6F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE6C9C204407EA00EBB6F8 /* AppDelegate.swift */; };
 		16EE6CA4204407EA00EBB6F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16EE6CA3204407EA00EBB6F8 /* Assets.xcassets */; };
 		16EE6CA7204407EA00EBB6F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EE6CA5204407EA00EBB6F8 /* LaunchScreen.storyboard */; };
-		16EE6CB02044081F00EBB6F8 /* Firestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE6CAE2044081F00EBB6F8 /* Firestore.swift */; };
-		16EE6CB12044081F00EBB6F8 /* Firestore.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EE6CAF2044081F00EBB6F8 /* Firestore.xib */; };
 		16EE6CB3204408E500EBB6F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16EE6CB2204408E500EBB6F8 /* GoogleService-Info.plist */; };
 		16EE6CB620440A4D00EBB6F8 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE6CB420440A4D00EBB6F8 /* Authentication.swift */; };
 		16EE6CB720440A4D00EBB6F8 /* Authentication.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EE6CB520440A4D00EBB6F8 /* Authentication.xib */; };
@@ -22,13 +29,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16700BBB20483FAB00378710 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		16700BBC20483FAB00378710 /* FriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
+		16A3D40D2045E77000742433 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
+		16A3D40F2045F1EE00742433 /* addFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addFriendsViewController.swift; sourceTree = "<group>"; };
+		16A3D4102045F1EE00742433 /* addFriendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addFriendsViewController.xib; sourceTree = "<group>"; };
+		16A3D4132045F20700742433 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		16A3D4142045F20700742433 /* FriendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsViewController.xib; sourceTree = "<group>"; };
+		16A3D4172045F21A00742433 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		16A3D4182045F21A00742433 /* ChatRoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatRoomViewController.xib; sourceTree = "<group>"; };
 		16EE6C99204407EA00EBB6F8 /* Firebase2018POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Firebase2018POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16EE6C9C204407EA00EBB6F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16EE6CA3204407EA00EBB6F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16EE6CA6204407EA00EBB6F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16EE6CA8204407EA00EBB6F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16EE6CAE2044081F00EBB6F8 /* Firestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firestore.swift; sourceTree = "<group>"; };
-		16EE6CAF2044081F00EBB6F8 /* Firestore.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Firestore.xib; sourceTree = "<group>"; };
 		16EE6CB2204408E500EBB6F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		16EE6CB420440A4D00EBB6F8 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		16EE6CB520440A4D00EBB6F8 /* Authentication.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Authentication.xib; sourceTree = "<group>"; };
@@ -52,9 +66,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16CD981F20492E6A00C8BD14 /* Add Friends */ = {
+			isa = PBXGroup;
+			children = (
+				16A3D40F2045F1EE00742433 /* addFriendsViewController.swift */,
+				16A3D4102045F1EE00742433 /* addFriendsViewController.xib */,
+			);
+			path = "Add Friends";
+			sourceTree = "<group>";
+		};
+		16CD982020492E7800C8BD14 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				16A3D4132045F20700742433 /* FriendsViewController.swift */,
+				16A3D4142045F20700742433 /* FriendsViewController.xib */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
 		16EE6C90204407EA00EBB6F8 = {
 			isa = PBXGroup;
 			children = (
+				16A3D40D2045E77000742433 /* Bridge.swift */,
 				16EE6C9B204407EA00EBB6F8 /* Firebase2018POC */,
 				16EE6C9A204407EA00EBB6F8 /* Products */,
 				D55EE67EE78DA4978AD913BA /* Pods */,
@@ -74,8 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				16EE6C9C204407EA00EBB6F8 /* AppDelegate.swift */,
-				16EE6CAE2044081F00EBB6F8 /* Firestore.swift */,
-				16EE6CAF2044081F00EBB6F8 /* Firestore.xib */,
 				16EE6CA3204407EA00EBB6F8 /* Assets.xcassets */,
 				16EE6CA5204407EA00EBB6F8 /* LaunchScreen.storyboard */,
 				16EE6CA8204407EA00EBB6F8 /* Info.plist */,
@@ -83,6 +114,12 @@
 				16EE6CBE20443F4500EBB6F8 /* LandingPage */,
 				16EE6CBF20443F5B00EBB6F8 /* Authentication */,
 				16EE6CC020443F8400EBB6F8 /* Extentions */,
+				16CD981F20492E6A00C8BD14 /* Add Friends */,
+				16CD982020492E7800C8BD14 /* Friends */,
+				16A3D4172045F21A00742433 /* ChatRoomViewController.swift */,
+				16A3D4182045F21A00742433 /* ChatRoomViewController.xib */,
+				16700BBB20483FAB00378710 /* FriendCell.swift */,
+				16700BBC20483FAB00378710 /* FriendCell.xib */,
 			);
 			path = Firebase2018POC;
 			sourceTree = "<group>";
@@ -192,12 +229,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16EE6CB12044081F00EBB6F8 /* Firestore.xib in Resources */,
+				16A3D4122045F1EE00742433 /* addFriendsViewController.xib in Resources */,
 				16EE6CB720440A4D00EBB6F8 /* Authentication.xib in Resources */,
 				16EE6CB3204408E500EBB6F8 /* GoogleService-Info.plist in Resources */,
 				16EE6CA7204407EA00EBB6F8 /* LaunchScreen.storyboard in Resources */,
+				16700BBE20483FAC00378710 /* FriendCell.xib in Resources */,
+				16A3D4162045F20700742433 /* FriendsViewController.xib in Resources */,
 				16EE6CBD20443F1D00EBB6F8 /* LandingPage.xib in Resources */,
 				16EE6CA4204407EA00EBB6F8 /* Assets.xcassets in Resources */,
+				16A3D41A2045F21A00742433 /* ChatRoomViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +284,28 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Firebase2018POC/Pods-Firebase2018POC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,8 +322,12 @@
 			files = (
 				16EE6C9D204407EA00EBB6F8 /* AppDelegate.swift in Sources */,
 				16EE6CBC20443F1D00EBB6F8 /* LandingPage.swift in Sources */,
+				16A3D4112045F1EE00742433 /* addFriendsViewController.swift in Sources */,
+				16A3D4192045F21A00742433 /* ChatRoomViewController.swift in Sources */,
+				16700BBD20483FAC00378710 /* FriendCell.swift in Sources */,
+				16A3D40E2045E77000742433 /* Bridge.swift in Sources */,
+				16A3D4152045F20700742433 /* FriendsViewController.swift in Sources */,
 				16EE6CB920441C2C00EBB6F8 /* ViewControllerExtention.swift in Sources */,
-				16EE6CB02044081F00EBB6F8 /* Firestore.swift in Sources */,
 				16EE6CB620440A4D00EBB6F8 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

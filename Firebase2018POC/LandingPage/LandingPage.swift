@@ -4,34 +4,47 @@
 //
 //  Created by Sanad  on 2/26/18.
 //  Copyright © 2018 Sanad . All rights reserved.
-//
+
 
 import UIKit
 import Firebase
+
 class LandingPage: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var displayNameTxtField: UITextField!
+    @IBOutlet weak var proceedBtn: UIButton!
+    @IBOutlet weak var locationTxtField: UITextField!
+    
+    //properties
+    var UserID = ""
+    var UserEmail = ""
+    var displayName = ""
+    var ref:DocumentReference? = nil
+    let db = Firestore.firestore()
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       hideKeyboardWhenTappedAround()
-        
-        
-        
-        let user = Auth.auth().currentUser
-        if let user = user {
-            // The user's ID, unique to the Firebase project.
-            // Do NOT use this value to authenticate with your backend server,
-            // if you have one. Use getTokenWithCompletion:completion: instead.
-            let uid = user.uid
-            let email = user.email
-            let photoURL = user.photoURL
+        UserID = UserDefaults.standard.string(forKey: "userId")!
+        UserEmail = UserDefaults.standard.string(forKey: "userEmail")!
+        let db = Firestore.firestore()
+        db.collection("users").whereField("email", isEqualTo: UserEmail).getDocuments{(snapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in snapshot!.documents {
+                    if (document.data()["displayName"] as? String) != nil {
+                        let vc = addFriendsViewController(nibName: "addFriendsViewController", bundle: nil)
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+            }
         }
+        proceedBtn.layer.borderWidth = 1
+        proceedBtn.layer.borderColor = UIColor.white.cgColor
+        hideKeyboardWhenTappedAround()
+     
         
-        
-//        let userInfo = Auth.auth().currentUser?.providerData[0]
-//        userInfo?.providerID
-//        // Provider-specific UID
-//        userInfo?.uid
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         dismissKeyboard()
@@ -45,6 +58,25 @@ class LandingPage: UIViewController,UITextFieldDelegate {
         } catch  {
             print("Invalid Selection.")
         }
+    }
+    @IBAction func proceedBtnPressed(_ sender: Any) {
+        displayName = displayNameTxtField.text!
+        
+        ref = db.collection("users").addDocument(data: [
+            "displayName":displayNameTxtField.text!,
+            "id":UserID,
+            "email":UserEmail,
+            "location":locationTxtField.text!
+        ]){ err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(self.ref!.documentID)")
+            }
+        }
+        let vc = addFriendsViewController(nibName: "addFriendsViewController", bundle: nil)
+        vc.location = locationTxtField.text!
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

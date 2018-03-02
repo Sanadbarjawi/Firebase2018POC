@@ -17,6 +17,9 @@ class Authentication: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var forgotPasswordBtn: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    let LoggedUser = Auth.auth().currentUser
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         userNameTxtField.text = ""
@@ -45,10 +48,36 @@ class Authentication: UIViewController,UITextFieldDelegate {
                     print("SignIn Successful!")
                     self.activityIndicator.stopAnimating()
                     //////
-                    //success code here
-                    let vc = LandingPage(nibName: "LandingPage", bundle: nil)
-                    self.navigationController?.pushViewController(vc, animated: true)
-                    //////
+           
+                    let db = Firestore.firestore()
+                    db.collection("users").whereField("email", isEqualTo: self.userNameTxtField.text!).getDocuments{(snapshot, err) in
+                        if let err = err {
+                            //success code here
+                            let vc = LandingPage(nibName: "LandingPage", bundle: nil)
+                            if let user = self.LoggedUser {
+                                UserDefaults.standard.set(user.uid, forKey: "userId")
+                                UserDefaults.standard.set(user.email, forKey: "userEmail")
+                            }
+                            self.navigationController?.pushViewController(vc, animated: true)
+                            //////
+                            print("Error getting documents: \(err)")
+                        } else {
+                            for document in snapshot!.documents {
+                                if (document.data()["displayName"] as? String) != nil {
+                                    UserDefaults.standard.set(self.userNameTxtField.text, forKey: "userEmail")
+                                    let vc = addFriendsViewController(nibName: "addFriendsViewController", bundle: nil)
+                                    self.navigationController?.pushViewController(vc, animated: true)
+                                }
+                            }
+                        }
+                        let vc = LandingPage(nibName: "LandingPage", bundle: nil)
+                        if let user = self.LoggedUser {
+                            UserDefaults.standard.set(user.uid, forKey: "userId")
+                            UserDefaults.standard.set(user.email, forKey: "userEmail")
+                        }
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+            
                 }else{
                     let message = error?.localizedDescription
                     let Alert = UIAlertController(title: "Sign In", message: message, preferredStyle: UIAlertControllerStyle.alert)
@@ -79,6 +108,8 @@ class Authentication: UIViewController,UITextFieldDelegate {
                     print("Registeration Successful!")
                     //////
                     //success code here
+                    UserDefaults.standard.set(user?.uid, forKey: "userId")
+                    UserDefaults.standard.set(user?.email, forKey: "userEmail")
                     let vc = LandingPage(nibName: "LandingPage", bundle: nil)
                     self.navigationController?.pushViewController(vc, animated: true)
                     //////
